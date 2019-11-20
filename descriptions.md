@@ -18,13 +18,13 @@ People may sometimes become weak due to external or internal influences, and hav
 |     | Drug              |
 |-----|-------------------|
 | PK  | __drug_id__       |
-|     | drg_name          |
-|     | drg_type          |
+|     | name              |
+|     | type              |
 | FK  | comp_id           |
-|     | drg_selling_price |
-|     | drg_buying_price  |
-|     | drg_gov_support   |
-|     | drg_expire        |
+|     | sell_prc          |
+|     | buy_prc           |
+|     | gov_sup           |
+|     | expiration        |
 
 
 
