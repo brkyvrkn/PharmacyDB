@@ -49,7 +49,8 @@ Doctors and Patients in a pharmacy database doesn’t seem really necessary. Pre
 
 
 ### Patient
-Doesn’t need to hold prescripts or doctors because those will be more than once. They would need their own tables.
+
+Patient is the client to whom we,as the pharmacy, sell our merchandise which are drugs. Patient table doesn’t need to hold prescripts or doctors because those will be more than once. They would need their own tables.
 
 |    |    Patient  |
 |----|-------------|
