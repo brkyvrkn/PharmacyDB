@@ -3,6 +3,8 @@
 
 People may sometimes become weak due to external or internal influences, and have the potential to be ill in all seasons due to malnutrition. At this point, it is important to be able to diagnose and treat people correctly. People need medicines to overcome these diseases. The organizations responsible for the sale of these drugs also unite under the roof of the pharmacy. A pharmacy must have some basic features that can respond to patients' wishes, and at the same time, they need some programs that contain records of all relevant information to respond quickly and systematically.
 
+![alt text](./images/oracle.png "Drug Schema")
+
 # Introduction
 
 
@@ -12,8 +14,6 @@ People may sometimes become weak due to external or internal influences, and hav
 2. Prescription
 
 ### Drug
-
-![alt text](./images/oracle.png "Drug Schema")
 
 |     | Drug              |
 |-----|-------------------|
