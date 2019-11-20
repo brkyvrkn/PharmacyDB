@@ -43,7 +43,7 @@ People may sometimes become weak due to external or internal influences, and hav
 
 3. Patient
 
-Doctors and Patients in a pharmacy database doesn’t seem really necessary. Prescriptions would suffice. But for example searching for some particular doctor’s prescriptions would be more efficient, if we can first find the doctor then it had the prescriptions that they issued instead of searching all the prescriptions in the database. So initially we thought of two tables one of which contained patients and other doctors. But after doing some research and some brainstorm, we decided to keep only the patient table. A Patient table would be needed if a special category drug is prescribed. And keeping all the patients seemed too much.
+Doctors and Patients in a pharmacy database doesn’t seem really necessary. Prescriptions would suffice. But for example searching for some particular doctor’s prescriptions would be more efficient, if we can first find the doctor then it had the prescriptions that they issued instead of searching all the prescriptions in the database. So initially we thought of two tables one of which contained patients and other doctors. But after doing some research and some brainstorm, we decided to keep only the patient table. A Patient table would be needed if a special category drug is prescribed. And keeping all the patients' data in the prescription table seemed too much.
 
 
 
