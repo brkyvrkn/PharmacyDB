@@ -34,10 +34,10 @@ People may sometimes become weak due to external or internal influences, and hav
 |     | Prescription    |
 |-----|-----------------|
 | PK  | __pre_id__      |
-|     | pre_date        |
-|     | pre_type        |
-| FK1 | pt_id           |
-| FK2 | dr_id           |
+|     | date            |
+|     | type            |
+| FK  | pt_id           |
+|     | dr_id           |
 
 ## Doğukan
 
