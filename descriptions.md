@@ -17,10 +17,10 @@ People may sometimes become weak due to external or internal influences, and hav
 
 |     | Drug              |
 |-----|-------------------|
-| PK  | __drg_id__        |
+| PK  | __drug_id__       |
 |     | drg_name          |
 |     | drg_type          |
-| FK1 | drg_comp_id       |
+| FK  | comp_id           |
 |     | drg_selling_price |
 |     | drg_buying_price  |
 |     | drg_gov_support   |
@@ -58,3 +58,37 @@ Doesn’t need to hold prescripts or doctors because those will be more than onc
 |    | pt_surname  |
 |    | pt_contact  |
 |    | pt_birthdate|
+
+## Said
+
+4. Drug Company
+5. Drug Supplier
+6. Suppliers (Table of Relation between Drug Supplier and Drug)
+
+
+|    |  DRUG_SUPP  |
+|----|-------------|
+| PK | __ds_id__   |
+|    | name        |
+|    | address     |
+
+
+Drug supplier is a firm that buy lots of medicine from company and deliver them to the pharmacies. For example, "Selcuk Ecza Deposu", "Edak Ecza Deposu" etc.
+
+|    |      SUPPLIERS     |
+|----|--------------------|
+| PK | __suppliers_id__   |
+| FK | ds_id              |
+| FK | drug_id            |
+
+
+Drug and drug suppliers have many to many relation. To reduce this relation to one to many Supplies Table keep ds_id and drug_id as foreign key.
+
+|    |  DRUG_COMP  |
+|----|-------------|
+| PK | __comp_id__ |
+|    | name        |
+|    | address     |
+
+Drug company is manifacturer of drugs. All drugs have one drug company. All company may [1,n] drugs. Example of drug company is Pfizer, Bayer, etc.
+
