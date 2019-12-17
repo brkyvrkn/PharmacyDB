@@ -1,0 +1,127 @@
+INSERT INTO PHARMACY (PHA_ID, PHA_ADDRESS, PHA_CONTACT)
+    VALUES(1,'GUZELYALI/IZMIR','02123553535');
+INSERT INTO PHARMACY (PHA_ID, PHA_ADDRESS, PHA_CONTACT)
+    VALUES(2,'GUZELYALI/IZMIR','02123555555');
+INSERT INTO PHARMACY (PHA_ID, PHA_ADDRESS, PHA_CONTACT)
+    VALUES(3,'URLA/IZMIR','02124204848');
+INSERT INTO PHARMACY (PHA_ID, PHA_ADDRESS, PHA_CONTACT)
+    VALUES(4,'HATAY/IZMIR','02127888484');
+INSERT INTO PHARMACY (PHA_ID, PHA_ADDRESS, PHA_CONTACT)
+    VALUES(5,'CESME/IZMIR','02128509698');
+INSERT INTO PHARMACY (PHA_ID, PHA_ADDRESS, PHA_CONTACT)
+    VALUES(6,'ALACATI/IZMIR','02122345678');
+INSERT INTO PHARMACY (PHA_ID, PHA_ADDRESS, PHA_CONTACT)
+    VALUES(7,'KONAK/IZMIR','02127894523');
+    
+INSERT INTO INVENTORY VALUES(1, 2);
+INSERT INTO INVENTORY VALUES(2, 1);
+INSERT INTO INVENTORY VALUES(3, 1);
+INSERT INTO INVENTORY VALUES(4, 3);
+INSERT INTO INVENTORY VALUES(5, 4);
+INSERT INTO INVENTORY VALUES(6, 4);
+INSERT INTO INVENTORY VALUES(7, 5);
+INSERT INTO INVENTORY VALUES(8, 5);
+INSERT INTO INVENTORY VALUES(9, 6);
+INSERT INTO INVENTORY VALUES(10, 7);
+INSERT INTO INVENTORY VALUES(11, 7);
+INSERT INTO INVENTORY VALUES(12, 7);
+
+INSERT INTO DRUG(DRG_ID,DRG_NAME,DRG_TYPE,DRG_COMP_ID,DRG_SUPP_ID,DRG_STK_ID,DRG_EXPIRE)
+VALUES(1, 'Parol', 'Analgesic',5,3,1,TO_DATE(05-APR-2024));
+
+INSERT INTO DRUG(DRG_ID,DRG_NAME,DRG_TYPE,DRG_COMP_ID,DRG_SUPP_ID,DRG_STK_ID,DRG_EXPIRE)
+VALUES(2, 'Arveles', 'Anti-inflammatory',6,2,2,TO_DATE(22-MAY-2020));
+
+INSERT INTO DRUG(DRG_ID,DRG_NAME,DRG_TYPE,DRG_COMP_ID,DRG_SUPP_ID,DRG_STK_ID,DRG_EXPIRE)
+VALUES(3, 'Parafon', 'Muscle Relaxing Agent',3,1,3,TO_DATE(08-AUG-2020));
+
+INSERT INTO DRUG(DRG_ID,DRG_NAME,DRG_TYPE,DRG_COMP_ID,DRG_SUPP_ID,DRG_STK_ID,DRG_EXPIRE)
+VALUES(4, 'Nurofen', 'Anti-inflammatory',4,5,4,TO_DATE(30-NOV-2021));
+
+INSERT INTO DRUG(DRG_ID,DRG_NAME,DRG_TYPE,DRG_COMP_ID,DRG_SUPP_ID,DRG_STK_ID,DRG_EXPIRE)
+VALUES(5, 'Vermidon', 'Analgesic',9,4,5,TO_DATE(24-OCT-2022));
+
+INSERT INTO DRUG(DRG_ID,DRG_NAME,DRG_TYPE,DRG_COMP_ID,DRG_SUPP_ID,DRG_STK_ID,SDRG_EXPIRE)
+VALUES(6, 'Fenistil', 'Anti-histaminic',1,5,6,TO_DATE(24-FEB-2022));
+
+INSERT INTO DRUG(DRG_ID,DRG_NAME,DRG_TYPE,DRG_COMP_ID,DRG_SUPP_ID,DRG_STK_ID,DRG_EXPIRE)
+VALUES(7, 'Concerta', 'CNS Stimulant',10,1,7,TO_DATE(25-FEB-2026));
+
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (1, 'Pfizer', 'Pfizer Türkiye, Ortaköy 34347 İstanbul - Türkiye');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (2, 'Bayer', 'UNKNOWN');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (3, 'Roche', 'Foundation Medicine, Inc. 150 Second Street Cambridge MA 02141');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (4, 'Abbvie', 'USA');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (5, 'JOHNSON&JOHNSON', 'New Brunswick, New Jersey, USA');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (6, 'Sanofi', 'Paris/France');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (7, 'MERCK', 'NEW JERSEY/USA');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (8, 'NOVARTIS', 'BASEL/SWITZERLAND');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (9, 'GILEAD', 'CALIFORNIA/USA');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (10, 'AMGEN', 'CALIFORNIA/USA');
+
+INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (1, 'SELCUK ECZA DEPOSU', 'Buca Organize Sanayi Bölgesi/Konak/İzmir');
+INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (2, 'DILEK ECZA DEPOSU', 'Karşıyaka/İzmir');
+INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (3, 'EDAK ECZA DEPOSU', 'Balçova/İzmir');
+INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (4, 'FARUK ECZA DEPOSU', 'Tepecik/İzmir');
+INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (5, 'GUNDAN ECZA DEPOSU', 'Gunaltay/Konak/İzmir');
+
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id) VALUES (1,1);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id) VALUES (2,2);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id) VALUES (3,3);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id) VALUES (4,4);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id) VALUES (5,5);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id) VALUES (6,2);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id) VALUES (7,4);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id) VALUES (8,1);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id) VALUES (9,2);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id) VALUES (10,3);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id) VALUES (11,4);
+
+INSERT INTO STOCK (stk_id, stk_buying_prc,stk_selling_prc,stk_in_id,stk_out_id,stk_inv_id) VALUES (1,250,300,1,1,3);
+INSERT INTO STOCK (stk_id, stk_buying_prc,stk_selling_prc,stk_in_id,stk_out_id,stk_inv_id) VALUES(2,206,256,3,5,4);
+INSERT INTO STOCK (stk_id, stk_buying_prc,stk_selling_prc,stk_in_id,stk_out_id,stk_inv_id) VALUES(3,200,248,3,3,6);
+INSERT INTO STOCK (stk_id, stk_buying_prc,stk_selling_prc,stk_in_id,stk_out_id,stk_inv_id) VALUES(4,211,272,3,2,5);
+INSERT INTO STOCK (stk_id, stk_buying_prc,stk_selling_prc,stk_in_id,stk_out_id,stk_inv_id) VALUES(5,209,288,4,8,11);
+INSERT INTO STOCK (stk_id, stk_buying_prc,stk_selling_prc,stk_in_id,stk_out_id,stk_inv_id) VALUES(6,217,273,2,9,4);
+INSERT INTO STOCK (stk_id, stk_buying_prc,stk_selling_prc,stk_in_id,stk_out_id,stk_inv_id) VALUES(7,213,253,3,9,9);
+INSERT INTO STOCK (stk_id, stk_buying_prc,stk_selling_prc,stk_in_id,stk_out_id,stk_inv_id) VALUES(8,208,231,8,6,10);
+INSERT INTO STOCK (stk_id, stk_buying_prc,stk_selling_prc,stk_in_id,stk_out_id,stk_inv_id) VALUES(9,201,252,9,1,5);
+INSERT INTO STOCK (stk_id, stk_buying_prc,stk_selling_prc,stk_in_id,stk_out_id,stk_inv_id) VALUES(10,213,230,1,1,10);
+INSERT INTO STOCK (stk_id, stk_buying_prc,stk_selling_prc,stk_in_id,stk_out_id,stk_inv_id) VALUES(11,206,275,5,9,1);
+
+INSERT INTO INCOME (in_id, in_date, ph_id) VALUES (1,05-APR-2019,1);
+INSERT INTO INCOME (in_id, in_date, ph_id) VALUES (2,05-APR-2019,2);
+INSERT INTO INCOME (in_id, in_date, ph_id) VALUES (3,05-JAN-2019,2);
+INSERT INTO INCOME (in_id, in_date, ph_id) VALUES (4,05-JAN-2019,1);
+INSERT INTO INCOME (in_id, in_date, ph_id) VALUES (5,23-APR-2019,3);
+INSERT INTO INCOME (in_id, in_date, ph_id) VALUES (6,23-APR-2019,4);
+INSERT INTO INCOME (in_id, in_date, ph_id) VALUES (7,23-APR-2019,5);
+INSERT INTO INCOME (in_id, in_date, ph_id) VALUES (8,19-MAY-2019,6);
+INSERT INTO INCOME (in_id, in_date, ph_id) VALUES (9,19-MAY-2019,6);
+INSERT INTO INCOME (in_id, in_date, ph_id) VALUES (10,29-OCT-2019,7);
+
+INSERT INTO OUTCOME (out_id, out_date, ph_id) VALUES (1,05-APR-2019,1);
+INSERT INTO OUTCOME (out_id, out_date, ph_id) VALUES (2,05-APR-2019,2);
+INSERT INTO OUTCOME (out_id, out_date, ph_id) VALUES (3,05-JAN-2019,2);
+INSERT INTO OUTCOME (out_id, out_date, ph_id) VALUES (4,05-JAN-2019,1);
+INSERT INTO OUTCOME (out_id, out_date, ph_id) VALUES (5,23-APR-2019,3);
+INSERT INTO OUTCOME (out_id, out_date, ph_id) VALUES (6,23-APR-2019,4);
+INSERT INTO OUTCOME (out_id, out_date, ph_id) VALUES (7,23-APR-2019,5);
+INSERT INTO OUTCOME (out_id, out_date, ph_id) VALUES (8,19-MAY-2019,6);
+INSERT INTO OUTCOME (out_id, out_date, ph_id) VALUES (9,19-MAY-2019,6);
+INSERT INTO OUTCOME (out_id, out_date, ph_id) VALUES (10,29-OCT-2019,7);
+
+
+INSERT INTO EMPLOYEE(EMP_ID, EMP_NAME, EMP_SAL, EMP_CONTACT, EMP_PHA_ID) 
+    VALUES (1,'CALVIN KLEIN',2020,'+901235424343',1);
+INSERT INTO EMPLOYEE(EMP_ID, EMP_NAME, EMP_SAL, EMP_CONTACT, EMP_PHA_ID) 
+    VALUES (2,'ERŞAN KUNERİ',1875,'+905433734879',3);
+INSERT INTO EMPLOYEE(EMP_ID, EMP_NAME, EMP_SAL, EMP_CONTACT, EMP_PHA_ID) 
+    VALUES (3,'FRANK SİNATRA',2020,'+905544747380',7);
+INSERT INTO EMPLOYEE(EMP_ID, EMP_NAME, EMP_SAL, EMP_CONTACT, EMP_PHA_ID) 
+    VALUES (4,'KEMAL SUNAL',2220,'+905362575727',4);
+INSERT INTO EMPLOYEE(EMP_ID, EMP_NAME, EMP_SAL, EMP_CONTACT, EMP_PHA_ID) 
+    VALUES (5,'ERTEM ŞENER',2320,'+905457855968',6);
+INSERT INTO EMPLOYEE(EMP_ID, EMP_NAME, EMP_SAL, EMP_CONTACT, EMP_PHA_ID) 
+    VALUES (6,'ABRAHAM LINCOLN',1213,'+905452257545',5);
+INSERT INTO EMPLOYEE(EMP_ID, EMP_NAME, EMP_SAL, EMP_CONTACT, EMP_PHA_ID) 
+    VALUES (7,'MADISON IVY',1665,'+905536522973',2);
