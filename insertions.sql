@@ -78,3 +78,82 @@ INSERT INTO OUTCOME(OUT_ID, OUT_DATE, PH_ID) VALUES (47, TO_DATE('23-JAN-2019', 
 INSERT INTO OUTCOME(OUT_ID, OUT_DATE, PH_ID) VALUES (48, TO_DATE('25-JAN-2019', 'DD-MON-YYYY'), 2);
 INSERT INTO OUTCOME(OUT_ID, OUT_DATE, PH_ID) VALUES (49, TO_DATE('26-JAN-2019', 'DD-MON-YYYY'), 2);
 INSERT INTO OUTCOME(OUT_ID, OUT_DATE, PH_ID) VALUES (50, TO_DATE('29-JAN-2019', 'DD-MON-YYYY'), 2);
+
+-- EMPLOYEE
+-- 6 employees three of them connected to first
+-- ID, NAME, PHONE, SAL, PH_ID
+INSERT INTO EMPLOYEE VALUES(1, 'SAID ALIR', '+905505500', 3000, 1);
+INSERT INTO EMPLOYEE VALUES(1, 'MERT CALIS', '+905500055', 3000, 1);
+INSERT INTO EMPLOYEE VALUES(1, 'BERKAY VURKAN', '+905502500', 5000, 1);
+INSERT INTO EMPLOYEE VALUES(1, 'DOGUKAN GOK', '+905505530', 3000, 2);
+INSERT INTO EMPLOYEE VALUES(1, 'ZUHAL ERTEN', '+905505515', 2000, 2);
+INSERT INTO EMPLOYEE VALUES(1, 'NURI ZIYA GUN', '+905305500', 3500, 2);
+
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (1, 'Pfizer', 'Pfizer Türkiye, Ortaköy 34347 İstanbul - Türkiye');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (2, 'Bayer', 'UNKNOWN');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (3, 'Roche', 'Foundation Medicine, Inc. 150 Second Street Cambridge MA 02141');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (4, 'Abbvie', 'USA');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (5, 'JOHNSON&JOHNSON', 'New Brunswick, New Jersey, USA');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (6, 'Sanofi', 'Paris/France');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (7, 'MERCK', 'NEW JERSEY/USA');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (8, 'NOVARTIS', 'BASEL/SWITZERLAND');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (9, 'GILEAD', 'CALIFORNIA/USA');
+INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (10, 'AMGEN', 'CALIFORNIA/USA');
+
+INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (1, 'SELCUK ECZA DEPOSU', 'Buca Organize Sanayi Bölgesi/Konak/İzmir');
+INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (2, 'DILEK ECZA DEPOSU', 'Karşıyaka/İzmir');
+INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (3, 'EDAK ECZA DEPOSU', 'Balçova/İzmir');
+INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (4, 'FARUK ECZA DEPOSU', 'Tepecik/İzmir');
+INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (5, 'GUNDAN ECZA DEPOSU', 'Gunaltay/Konak/İzmir');
+
+
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (1,1,1);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (2,2,1);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (3,3,1);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (4,4,1);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (5,5,2);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (6,1,2);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (7,2,3);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (8,3,3);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (9,4,4);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (10,5,4);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (11,1,5);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (12,2,6);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (13,3,7);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (14,4,8);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (15,5,9);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (16,1,10);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (17,2,11);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (18,3,12);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (19,4,13);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (20,5,14);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (21,1,15);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (22,2,16);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (23,3,17);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (24,4,18);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (25,5,19);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (26,1,20);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (27,2,21);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (28,3,22);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (29,4,23);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (30,5,24);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (31,1,25);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (32,2,26);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (33,3,27);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (34,4,28);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (35,5,29);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (36,1,30);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (37,2,30);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (38,3,15);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (39,4,22);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (40,5,23);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (41,1,41);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (42,2,31);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (43,3,21);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (44,4,22);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (45,5,32);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (46,1,2);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (47,2,3);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (48,3,3);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (49,4,4);
+INSERT INTO SUPPLIERS (supp_id, supp_ds_id, supp_drg_id) VALUES (50,5,4);
