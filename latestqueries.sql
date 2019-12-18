@@ -102,3 +102,29 @@ from "DRUG" a,"DRUG_SUPP" B,"SUPPLIERS" c
 where (c.DRG_ID = a.DRG_ID) and (c.DS_ID =b.DS_ID)
 group by a.DRG_ID
 order by c.DRG_ID;                                  
+
+--2.ekleme
+--show how much sales the pharmacies accumulated between 2019 and 2020, dates can be changed.
+select ph.PH_ID,sum(st.ST_SELL_PRICE)"TOTAL SOLD SUM",sum(st.ST_SELL_PRICE)/12"AVERAGE MONTHLY INCOME", count(st.ST_ID)"SOLD STOCK COUNT"
+from "PHARMACY" ph,"INCOME" i,"STOCK" st
+where ph.PH_ID = i.PH_ID and i.IN_ID=st.IN_ID and (i.IN_DATE between '01-01-2019' and '01-01-2020')
+group by ph.PH_ID
+
+--show how much shipments pharmacies took between 2019 and 2020, dates can be changed.
+select ph.PH_ID,sum(st.ST_BUY_PRICE)"TOTAL BOUGHT SUM",sum(st.ST_BUY_PRICE)/12"AVERAGE MONTHLY OUTCOME", count(st.ST_ID)"BOUGHT STOCK COUNT"
+from "PHARMACY" ph,"OUTCOME" o,"STOCK" st
+where ph.PH_ID = o.PH_ID and o.OUT_ID=st.OUT_ID and (o.OUT_DATE between '01-01-2019' and '01-01-2020')
+group by ph.PH_ID
+
+--show how many drugs can be sold(not expired ones), and how much money can be accumulated from their sale for each pharmacy
+select ph.PH_ID, count(st.ST_ID), sum(st.ST_SELL_PRICE)
+from "PHARMACY" ph,"INVENTORY" inv,"STOCK" st
+where ph.PH_ID = inv.PH_ID and inv.INV_ID=st.INV_ID and (st.ST_EXPIRE>SYSDATE)
+group by ph.PH_ID
+
+--show how many stock are in each inventory of each pharmacy
+select ph.PH_ID,inv.INV_ID,count(st.ST_ID) "TOTAL STOCK COUNT"
+from "PHARMACY" ph,"INVENTORY" inv, "STOCK" st
+where (ph.PH_ID=inv.PH_ID and inv.INV_ID=st.INV_ID)
+group by ph.PH_ID,inv.INV_ID
+order by ph.PH_ID
