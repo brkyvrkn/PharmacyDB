@@ -141,3 +141,10 @@ select ph.PH_ID,sum(st.ST_SELL_PRICE)/ count(st.ST_ID)
 from "PHARMACY" ph,"OUTCOME" O,"STOCK" st
 where ph.PH_ID = o.PH_ID and o.IN_ID=st.OUT_ID and (o.OUT_DATE between '01-01-2019' and '01-01-2020')
 group by ph.PH_ID
+                                                   
+--show how many stocks are there per drug
+select drg.DRG_ID,COUNT(st.ST_ID)
+from "DRUG" drg, "STOCK" st
+where  drg.DRG_ID = st.ST_ID
+group by drg.DRG_ID
+order by drg.DRG_ID
