@@ -128,3 +128,16 @@ from "PHARMACY" ph,"INVENTORY" inv, "STOCK" st
 where (ph.PH_ID=inv.PH_ID and inv.INV_ID=st.INV_ID)
 group by ph.PH_ID,inv.INV_ID
 order by ph.PH_ID
+                                                   
+
+--show how much sales the pharmacies accumulated between 2019 and 2020 per stock, dates can be changed.
+select ph.PH_ID,sum(st.ST_SELL_PRICE)/ count(st.ST_ID)
+from "PHARMACY" ph,"INCOME" i,"STOCK" st
+where ph.PH_ID = i.PH_ID and i.IN_ID=st.IN_ID and (i.IN_DATE between '01-01-2019' and '01-01-2020')
+group by ph.PH_ID
+                                                   
+--show how much buyment the pharmacies accumulated between 2019 and 2020 per stock, dates can be changed.
+select ph.PH_ID,sum(st.ST_SELL_PRICE)/ count(st.ST_ID)
+from "PHARMACY" ph,"OUTCOME" O,"STOCK" st
+where ph.PH_ID = o.PH_ID and o.IN_ID=st.OUT_ID and (o.OUT_DATE between '01-01-2019' and '01-01-2020')
+group by ph.PH_ID
