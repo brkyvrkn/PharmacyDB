@@ -65,3 +65,40 @@ select ST_ID,
        INV_ID,
        (select "DRG_NAME" from "DRUG" x where x."DRG_ID" = a."DRG_ID") "DRG_NAME"
 from "STOCK" a;
+                                  
+                                 
+--show average, minimum, maximum selling prices and total sales income
+select AVG(ST_SELL_PRICE)"AVERAGE SELLING PRICE",MIN(ST_SELL_PRICE)"MINIMUM SELLING PRICE",
+       MAX(ST_SELL_PRICE)"MAXIMUM SELLING PRICE",SUM(ST_SELL_PRICE)"TOTAL SALES INCOME"
+from STOCK
+
+--show average, minimum, maximum buying prices and total buyinngs outcome
+select AVG(ST_BUY_PRICE)"AVERAGE BUYING PRICE",MIN(ST_BUY_PRICE)"MINIMUM BUYING PRICE",
+       MAX(ST_BUY_PRICE)"MAXIMUM BUYING PRICE",SUM(ST_BUY_PRICE)"TOTAL BUYINGS OUTCOME"
+from STOCK
+
+--drugs with lowest sale price
+select a.DRG_ID,
+       b.DRG_NAME
+from "STOCK" a,"DRUG"b where (select MIN(ST_SELL_PRICE) from stock ) = a.ST_SELL_PRICE and a.DRG_ID=b.DRG_ID
+
+--drugs with highest sale price
+select a.DRG_ID,
+       b.DRG_NAME
+from "STOCK" a,"DRUG"b where (select MAX(ST_SELL_PRICE) from stock ) = a.ST_SELL_PRICE and a.DRG_ID=b.DRG_ID
+
+-- show the specific drug #x's suppliers
+select a.DRG_ID,
+       a.DRG_NAME,
+       a.DRG_TYPE,
+       b.DS_NAME
+from "DRUG" a,"DRUG_SUPP" B,"SUPPLIERS" c 
+where (a.DRG_ID = #X and(c.DRG_ID = a.DRG_ID) and (c.DS_ID =b.DS_ID));
+
+--show how much suppliers every drug has
+select C.DRG_ID,
+       count(c.DS_ID)
+from "DRUG" a,"DRUG_SUPP" B,"SUPPLIERS" c 
+where (c.DRG_ID = a.DRG_ID) and (c.DS_ID =b.DS_ID)
+group by a.DRG_ID
+order by c.DRG_ID;                                  
