@@ -145,6 +145,28 @@ group by ph.PH_ID
 --show how many stocks are there per drug
 select drg.DRG_ID,COUNT(st.ST_ID)
 from "DRUG" drg, "STOCK" st
-where  drg.DRG_ID = st.ST_ID
+where  drg.DRG_ID = st.DRG_ID
 group by drg.DRG_ID
 order by drg.DRG_ID
+
+--3.ekleme
+--shows how many sales are there per drug
+select drg.DRG_ID,COUNT(st.IN_ID)
+from "DRUG" drg, "STOCK" st
+where drg.DRG_ID = st.DRG_ID
+group by drg.DRG_ID
+order by drg.DRG_ID
+
+--shows how many individual drugs in stock
+select drg.DRG_ID,COUNT(st.OUT_ID)
+from "DRUG" drg, "STOCK" st
+where drg.DRG_ID = st.DRG_ID
+group by drg.DRG_ID
+order by drg.DRG_ID
+
+--shows how many individual drugs in inventory
+select inv.INV_ID,COUNT(st.OUT_ID)
+from "INVENTORY" inv, "STOCK" st
+where inv.INV_ID = st.INV_ID
+group by inv.INV_ID
+order by inv.INV_ID
