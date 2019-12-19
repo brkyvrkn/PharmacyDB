@@ -170,3 +170,66 @@ from "INVENTORY" inv, "STOCK" st
 where inv.INV_ID = st.INV_ID
 group by inv.INV_ID
 order by inv.INV_ID
+
+ --4.ekleme
+ --show which drugs the pharmacies has
+select ph.PH_ID,inv.INV_ID,drg.DRG_ID,drg.DRG_NAME
+from "DRUG" drg, "STOCK" st, "INVENTORY" inv, "PHARMACY" ph
+where ph.PH_ID = inv.PH_ID and st.INV_ID=inv.INV_ID and st.DRG_ID = drg.DRG_ID
+order by ph.PH_ID
+
+--how much drug has been purchased from each drug company
+select dc.DC_ID, COUNT(o.OUT_ID)
+from "DRUG" drg, "STOCK" st, "OUTCOME" o, "DRUG_COMP" dc
+where dc.DC_ID = drg.DC_ID and drg.DRG_ID = st.DRG_ID and st.OUT_ID = o.OUT_ID
+group by dc.DC_ID
+order by dc.DC_ID
+
+--how much drug has been sold  from each drug company
+select dc.DC_ID, COUNT(inc.IN_ID)
+from "DRUG" drg, "STOCK" st, "INCOME" inc, "DRUG_COMP" dc
+where dc.DC_ID = drg.DC_ID and drg.DRG_ID = st.DRG_ID and st.IN_ID = inc.IN_ID
+group by dc.DC_ID
+order by dc.DC_ID
+
+--how much drug has been purchased from each drug supplier
+select ds.DS_ID, COUNT(o.OUT_ID)
+from "DRUG" drg, "STOCK" st, "OUTCOME" O, "DRUG_SUPP" ds, "SUPPLIERS" sp
+where ds.DS_ID = sp.DS_ID and sp.DRG_ID = drg.DRG_ID and drg.DRG_ID = st.DRG_ID and st.OUT_ID = o.OUT_ID
+group by ds.DS_ID
+order by ds.DS_ID
+
+--how much drug has been sold from each drug supplier
+select ds.DS_ID, COUNT(inc.IN_ID)
+from "DRUG" drg, "STOCK" st, "INCOME" inc, "DRUG_SUPP" ds, "SUPPLIERS" sp
+where ds.DS_ID = sp.DS_ID and sp.DRG_ID = drg.DRG_ID and drg.DRG_ID = st.DRG_ID and st.IN_ID = inc.IN_ID
+group by ds.DS_ID
+order by ds.DS_ID
+
+--how much drug has been purchased from each drug company between a date interval
+select dc.DC_ID, COUNT(o.OUT_ID)
+from "DRUG" drg, "STOCK" st, "OUTCOME" o, "DRUG_COMP" dc
+where dc.DC_ID = drg.DC_ID and drg.DRG_ID = st.DRG_ID and st.OUT_ID = o.OUT_ID and (o.OUT_DATE between '01-01-2019' and '01-01-2020')
+group by dc.DC_ID
+order by dc.DC_ID
+
+--how much drug has been sold  from each drug company between a date interval
+select dc.DC_ID, COUNT(inc.IN_ID)
+from "DRUG" drg, "STOCK" st, "INCOME" inc, "DRUG_COMP" dc
+where dc.DC_ID = drg.DC_ID and drg.DRG_ID = st.DRG_ID and st.IN_ID = inc.IN_ID and (inc.IN_DATE between '01-01-2019' and '01-01-2020')
+group by dc.DC_ID
+order by dc.DC_ID
+
+--how much drug has been purchased from each drug supplier between a date interval
+select ds.DS_ID, COUNT(o.OUT_ID)
+from "DRUG" drg, "STOCK" st, "OUTCOME" O, "DRUG_SUPP" ds, "SUPPLIERS" sp
+where ds.DS_ID = sp.DS_ID and sp.DRG_ID = drg.DRG_ID and drg.DRG_ID = st.DRG_ID and st.OUT_ID = o.OUT_ID and (inc.IN_DATE between '01-01-2019' and '01-01-2020')
+group by ds.DS_ID
+order by ds.DS_ID
+
+--how much drug has been sold from each drug supplier between a date interval
+select ds.DS_ID, COUNT(inc.IN_ID)
+from "DRUG" drg, "STOCK" st, "INCOME" inc, "DRUG_SUPP" ds, "SUPPLIERS" sp
+where ds.DS_ID = sp.DS_ID and sp.DRG_ID = drg.DRG_ID and drg.DRG_ID = st.DRG_ID and st.IN_ID = inc.IN_ID and (inc.IN_DATE between '01-01-2019' and '01-01-2020')
+group by ds.DS_ID
+order by ds.DS_ID                                                  
