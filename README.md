@@ -2,6 +2,10 @@
 
 [![License](https://img.shields.io/github/license/brkyvrkn/PharmacyDB?style=plastic)](https://github.com/brkyvrkn/PharmacyDB/blob/master/LICENSE)
 
+## Environment
+
+The management system was built by using the Oracle with version 12c. It provides the illustration and running the code easily.
+
 ## Abstract
 
 People may sometimes become weak due to external or internal influences, and have the potential to be ill in all seasons due to malnutrition. At this point, it is important to be able to diagnose and treat people correctly. People need medicines to overcome these diseases. The organizations responsible for the sale of these drugs also unite under the roof of the pharmacy. A pharmacy must have some basic features that can respond to patients' wishes, and at the same time, they need some programs that contain records of all relevant information to respond quickly and systematically.
@@ -52,6 +56,80 @@ Some relation sets have more than one interconnection associated with their fore
 The rectangles defines entity sets and the ellipses are connected to are their attributes ​(entity).
 
 ![alt text](https://github.com/brkyvrkn/PharmacyDB/blob/master/images/ERD.png "ERD Diagram")
+
+## Entities
+
+### Drug Company
+
+|    |              |
+|----|--------------|
+| PK | dc_id        |
+|    | dc_name      |
+|    | dc_address   |
+
+### Drug
+
+|    |            |
+|----|------------|
+| PK | drg_id     |
+|    | drg_name   |
+|    | drg_type   |
+|    | drg_expire |
+
+### Drug Suppliers
+
+|    |            |
+|----|------------|
+| PK | ds_id      |
+|    | ds_name    |
+|    | ds_address |
+
+### Stock
+
+|    |               |
+|----|---------------|
+| PK | st_id         |
+|    | st_buy_price  |
+|    | st_sell_price |
+
+### Pharmacy
+
+|    |            |
+|----|------------|
+| PK | ph_id      |
+|    | ph_address |
+|    | ph_name    |
+|    | ph_phone   |
+
+### Income
+
+|   |         |
+|---|---------|
+|   | in_id   |
+|   | in_date |
+
+### Outcome
+
+|   |          |
+|---|----------|
+|   | out_id   |
+|   | out_date |
+
+## Reduced Relation
+
+This diagram does not include relations (which has [0/1] or[1/1] etc.) remove them and distribute the primary keys as foreign keys.
+
+Reduced relations are eliminated and according to elimination law which is ​"*if there is an association like [1,1] or [0,1] remove the relation between these two tables and distribute attributes of relation to tables as foreign keys*".
+
+* *dc_id*, *st_id*​ are inserted into **​DRUG** ​table as foreign keys
+* *ds_id*, *drg_id​* are inserted into **​SUPPLIERS** ​table as foreign key.
+* *inv_id*, *in_id*, *out_id* ​are inserted as foreign keys and *​in_date*, *out_date* are inserted as attributes to **​STOCK**​ table.
+* *ph_id* ​is inserted into **​INVENTORY** ​table as foreign key.
+* *ph_id* ​is inserted into **​INCOME** ​and ​**OUTCOME** ​tables as foreign keys.
+
+> Thus, the relations after reducing can be illustrated as below
+
+![alt text](https://github.com/brkyvrkn/PharmacyDB/blob/master/images/Reduced_RD.png "Reduced Relational Diagram")
 
 ## Authors
 
