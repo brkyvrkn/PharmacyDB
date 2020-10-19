@@ -133,13 +133,10 @@ Reduced relations are eliminated and according to elimination law which is ​"*
 
 ## Authors
 
-Berkay Vurkan, berkayvurkan@yahoo.com
-
-[Said Alır](https://github.com/Al-Said),
-
-[Mert Çalış](https://github.com/mertcalis),
-
-[Doğukan Gök](https://github.com/dgkngk)
+- Berkay Vurkan, berkayvurkan@yahoo.com
+- [Said Alır](https://github.com/Al-Said)
+- [Mert Çalış](https://github.com/mertcalis)
+- [Doğukan Gök](https://github.com/dgkngk)
 
 ## License
 
