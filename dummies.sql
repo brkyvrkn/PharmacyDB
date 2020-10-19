@@ -1,7 +1,10 @@
+
+-- ===== PHARAMACY =====
 -- 2 Pharmacies
 INSERT INTO PHARMACY VALUES(1, 'Sifa', 'Unlu Sk. No.6', '2322547685');
 INSERT INTO PHARMACY VALUES(2, 'Hayat', 'Mithatpasa Cd. No.279','2323553535');
 
+-- ===== INVENTORY =====
 -- 3 Inventories
 -- Two of them is connected to the first pharmacy
 -- and the last one is connected to the second pharmacy
@@ -9,6 +12,7 @@ INSERT INTO INVENTORY VALUES(1, 1);
 INSERT INTO INVENTORY VALUES(2, 1);
 INSERT INTO INVENTORY VALUES(3, 2);
 
+-- ===== INCOME =====
 -- 15 Incomes
 INSERT INTO INCOME(in_id, in_date, ph_id) VALUES (1, TO_DATE('05-APR-2019', 'dd-mon-yyyy'), 2);
 INSERT INTO INCOME(in_id, in_date, ph_id) VALUES (2, TO_DATE('30-MAY-2019', 'dd-mon-yyyy'), 2);
@@ -26,6 +30,7 @@ INSERT INTO INCOME(in_id, in_date, ph_id) VALUES (13, TO_DATE('02-NOV-2019', 'dd
 INSERT INTO INCOME(in_id, in_date, ph_id) VALUES (14, TO_DATE('06-NOV-2019', 'dd-mon-yyyy'), 1);
 INSERT INTO INCOME(in_id, in_date, ph_id) VALUES (15, TO_DATE('13-DEC-2019', 'dd-mon-yyyy'), 1);
 
+-- ===== OUTCOME =====
 -- 50 Outcomes
 INSERT INTO OUTCOME(OUT_ID, OUT_DATE, PH_ID) VALUES (1, TO_DATE('13-DEC-2019', 'dd-mon-yyyy'), 1);
 INSERT INTO OUTCOME(OUT_ID, OUT_DATE, PH_ID) VALUES (2, TO_DATE('10-DEC-2019', 'dd-mon-yyyy'), 1);
@@ -78,7 +83,7 @@ INSERT INTO OUTCOME(OUT_ID, OUT_DATE, PH_ID) VALUES (48, TO_DATE('25-JAN-2019', 
 INSERT INTO OUTCOME(OUT_ID, OUT_DATE, PH_ID) VALUES (49, TO_DATE('26-JAN-2019', 'dd-mon-yyyy'), 2);
 INSERT INTO OUTCOME(OUT_ID, OUT_DATE, PH_ID) VALUES (50, TO_DATE('29-JAN-2019', 'dd-mon-yyyy'), 2);
 
--- EMPLOYEE
+-- ===== EMPLOYEE =====
 -- 6 employees three of them connected to first
 -- ID, NAME, PHONE, SAL, PH_ID
 INSERT INTO EMPLOYEE VALUES(1, 'SAID ALIR', '+905505500', 3000, 1);
@@ -88,6 +93,7 @@ INSERT INTO EMPLOYEE VALUES(4, 'DOGUKAN GOK', '+905505530', 3000, 2);
 INSERT INTO EMPLOYEE VALUES(5, 'ZUHAL ERTEN', '+905505515', 2000, 2);
 INSERT INTO EMPLOYEE VALUES(6, 'NURI ZIYA GUN', '+905305500', 3500, 2);
 
+-- ===== DRUG COMPANY =====
 INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (1, 'Pfizer', 'Pfizer Türkiye, Ortaköy 34347 İstanbul - Türkiye');
 INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (2, 'Bayer', 'UNKNOWN');
 INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (3, 'Roche', 'Foundation Medicine, Inc. 150 Second Street Cambridge MA 02141');
@@ -99,12 +105,14 @@ INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (8, 'NOVARTIS', 'BASEL
 INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (9, 'GILEAD', 'CALIFORNIA/USA');
 INSERT INTO DRUG_COMP (dc_id, dc_name, dc_address) VALUES (10, 'AMGEN', 'CALIFORNIA/USA');
 
+-- ===== DRUG SUPPLIER =====
 INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (1, 'SELCUK ECZA DEPOSU', 'Buca Organize Sanayi Bölgesi/Konak/İzmir');
 INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (2, 'DILEK ECZA DEPOSU', 'Karşıyaka/İzmir');
 INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (3, 'EDAK ECZA DEPOSU', 'Balçova/İzmir');
 INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (4, 'FARUK ECZA DEPOSU', 'Tepecik/İzmir');
 INSERT INTO DRUG_SUPP (ds_id, ds_name, ds_address) VALUES (5, 'GUNDAN ECZA DEPOSU', 'Gunaltay/Konak/İzmir');
 
+-- ===== DRUG =====
 INSERT INTO DRUG(DRG_ID, DRG_NAME, DRG_TYPE, DC_ID) VALUES(1, 'PAROL', 'PILL', 1);
 INSERT INTO DRUG(DRG_ID, DRG_NAME, DRG_TYPE, DC_ID) VALUES(2, 'PAROL', 'GEL', 1);
 INSERT INTO DRUG(DRG_ID, DRG_NAME, DRG_TYPE, DC_ID) VALUES(3, 'ARVELES', 'PILL', 3);
@@ -136,6 +144,7 @@ INSERT INTO DRUG(DRG_ID, DRG_NAME, DRG_TYPE, DC_ID) VALUES(28, 'LUSTRAL', 'PILL'
 INSERT INTO DRUG(DRG_ID, DRG_NAME, DRG_TYPE, DC_ID) VALUES(29, 'APPRANAX', 'PILL', 2);
 INSERT INTO DRUG(DRG_ID, DRG_NAME, DRG_TYPE, DC_ID) VALUES(30, 'INSULIN', 'AMPUL', 2);
 
+-- ===== SUPPLIERS =====
 INSERT INTO SUPPLIERS VALUES (1,1,1);
 INSERT INTO SUPPLIERS VALUES (2,2,1);
 INSERT INTO SUPPLIERS VALUES (3,3,1);
@@ -187,6 +196,7 @@ INSERT INTO SUPPLIERS VALUES (48,3,3);
 INSERT INTO SUPPLIERS VALUES (49,4,4);
 INSERT INTO SUPPLIERS VALUES (50,5,4);
 
+-- ===== STOCK =====
 INSERT INTO STOCK(ST_ID, ST_EXPIRE, ST_BUY_PRICE, ST_SELL_PRICE, INV_ID, IN_ID, OUT_ID, DRG_ID) VALUES(26, TO_DATE('01-MAR-2022', 'dd-mon-yyyy'), 10, 15, 1, NULL, 1, 3);
 INSERT INTO STOCK(ST_ID, ST_EXPIRE, ST_BUY_PRICE, ST_SELL_PRICE, INV_ID, IN_ID, OUT_ID, DRG_ID) VALUES(27, TO_DATE('01-APR-2022', 'dd-mon-yyyy'), 12, 15, 3, NULL, 2, 29);
 INSERT INTO STOCK(ST_ID, ST_EXPIRE, ST_BUY_PRICE, ST_SELL_PRICE, INV_ID, IN_ID, OUT_ID, DRG_ID) VALUES(28, TO_DATE('01-JAN-2022', 'dd-mon-yyyy'), 14, 19, 1, 1, 3, 15);
